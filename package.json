@@ -1,16 +1,25 @@
 {
   "name": "scoreboard",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "saud",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
     "nodemon": "^1.18.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaudTauqeer/React-ScoreBoard-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SaudTauqeer/React-ScoreBoard-App/issues"
+  },
+  "homepage": "https://github.com/SaudTauqeer/React-ScoreBoard-App#readme",
+  "description": ""
 }
