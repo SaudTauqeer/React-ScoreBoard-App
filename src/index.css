@@ -1,5 +1,4 @@
 /* ELEMENT STYLES -------------------- */
-
 body {
   background: #e8e7e7; 
   font-family: arial;
@@ -24,7 +23,6 @@ header h1 {
 }
 
 /* FORMS */
-
 form {
   display: flex;
   background-color: #8063FA;
@@ -78,7 +76,6 @@ input[type=submit] {
 }
 
 /* ICONS */
-
 svg {
   width: 28px;
   height: 19px;
@@ -97,7 +94,6 @@ svg {
 }
 
 /* COMPONENT STYLES -------------------- */
-
 .scoreboard {
   background: #fff;
   width: 700px;
@@ -151,6 +147,7 @@ svg {
 }
 
 .stats {
+  display: flex;
   margin: 0 0 0 28px;
   font-weight: normal;
 }
