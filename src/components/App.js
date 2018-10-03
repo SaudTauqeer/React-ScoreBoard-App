@@ -9,22 +9,32 @@ class App extends Component {
     players: [
       {
         name: "Guil",
-        id: 1
+        id: 1,
+        score: 0
       },
       {
         name: "Treasure",
+        score: 0,
         id: 2
       },
       {
         name: "Ashley",
+        score: 0,
         id: 3
       },
       {
         name: "James",
+        score: 0,
         id: 4
       }
     ]
   };
+
+  changeScore = (index, delta) =>{
+    this.setState((prevState)=>{
+      return {score: prevState.players[index].score += delta}
+    });
+  }
 
   handleRemovePlayer = (id) => {
     this.setState( prevState => {
@@ -39,16 +49,21 @@ class App extends Component {
       <div className="scoreboard">
         <Header 
           title="Scoreboard" 
-          totalPlayers={this.state.players.length} 
+          players={this.state.players}
+          
+          
         />
   
         {/* Players list */}
-        {this.state.players.map( player =>
+        {this.state.players.map( (player, index) => 
           <Player 
             name={player.name}
             id={player.id}
             key={player.id.toString()} 
-            removePlayer={this.handleRemovePlayer}           
+            removePlayer={this.handleRemovePlayer}
+            score= { player.score }
+            index={ index }
+            changeScore= { this.changeScore }         
           />
         )}
       </div>
