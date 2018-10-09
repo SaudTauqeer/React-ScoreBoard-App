@@ -1,40 +1,59 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player'
-  
+import AddPlayerForm from './AddPlayerForm'  
 
 
 class App extends Component {
   state = {
     players: [
       {
-        name: "Guil",
+        name: "Player 1",
         id: 1,
         score: 0
       },
       {
-        name: "Treasure",
+        name: "Player 2",
         score: 0,
         id: 2
       },
       {
-        name: "Ashley",
+        name: "Player 3",
         score: 0,
         id: 3
       },
       {
-        name: "James",
+        name: "Player 4",
         score: 0,
         id: 4
       }
     ]
   };
+  // player id 
+  prevPLayerId = 4;
 
   changeScore = (index, delta) =>{
     this.setState((prevState)=>{
       return {score: prevState.players[index].score += delta}
     });
   }
+
+  handleAddPlayer = (name)=>{
+    this.setState(prevState =>{
+      return {
+      players: [
+        ...prevState.players,
+        {
+          name: name ,
+          score:0,
+          id: this.prevPLayerId += 1,
+        }
+      ]
+    }
+    });
+
+  }
+
 
   handleRemovePlayer = (id) => {
     this.setState( prevState => {
@@ -43,6 +62,8 @@ class App extends Component {
       };
     });
   }
+
+  
 
   render() {
     return (
@@ -53,7 +74,7 @@ class App extends Component {
           
           
         />
-  
+        
         {/* Players list */}
         {this.state.players.map( (player, index) => 
           <Player 
@@ -66,6 +87,9 @@ class App extends Component {
             changeScore= { this.changeScore }         
           />
         )}
+        
+        <AddPlayerForm addPlayer={ this.handleAddPlayer } />
+        
       </div>
     );
   }
