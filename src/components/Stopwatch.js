@@ -30,7 +30,7 @@ class Stopwatch extends Component {
         this.setState(( prevState ) =>({ 
             isRunning: !prevState.isRunning
         }));
-        if (!this.isRunning){
+        if (!this.state.isRunning){
             this.setState({
                 previousTime: Date.now()
             });
