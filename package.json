@@ -9,11 +9,12 @@
 		"serve": "^10.1.2"
 	},
 	"scripts": {
-		"heroku-postbuild": "npm run build",
-		"start": "react-scripts start",
+    		"heroku-postbuild": "npm run build",
+    		"start": "serve -s build",
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject"
 	},
-	"browserslist": [ ">0.2%", "not dead", "not ie <= 11", "not op_mini all" ]
+	"browserslist": [ ">0.2%", "not dead", "not ie <= 11", "not op_mini all" ],
+	  "heroku-run-build-script": true
 }
